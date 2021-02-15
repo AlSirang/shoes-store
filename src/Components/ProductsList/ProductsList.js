@@ -1,6 +1,13 @@
-import { Grid } from "@material-ui/core";
+import { Grid, makeStyles } from "@material-ui/core";
+import { Link } from "react-router-dom";
 import { ProductItem } from "../ProductItem/ProdcutItem";
 import { shoes } from "../../data";
+
+const useStyles = makeStyles((t) => ({
+    linkStyle: {
+        textDecoration: "none",
+    },
+}));
 
 export function ProductsList() {
     const classes = useStyles();

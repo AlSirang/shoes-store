@@ -1,8 +1,10 @@
 import { Container, Typography } from "@material-ui/core";
-import { Outlet, useParams, Link } from "react-router-dom";
+import { Outlet, useParams } from "react-router-dom";
 import { NotFound } from "../NotFound";
 import { shoes } from "../../data.js";
 import { useStyles } from "./Products.style";
+
+import { ProductItem } from "../ProductItem/ProdcutItem";
 
 export const ProductsIndex = () => {
     const classes = useStyles();
@@ -18,15 +20,15 @@ export const ProductsIndex = () => {
     );
 };
 
+// display Single Product Item
 export function Product() {
     const { productId } = useParams();
     const shoe = shoes[productId];
-
     if (!shoe) {
         return <NotFound />;
     }
-    const { imgSrc, description, price } = shoe;
 
+    const { imgSrc, description, price } = shoe;
     return (
         <>
             <h1>Product</h1>
